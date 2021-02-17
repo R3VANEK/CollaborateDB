@@ -400,6 +400,17 @@ CREATE PROCEDURE insert_message(IN id_sender1 INT, IN id_recipent1 INT, IN messa
 delimiter ;
 
 
+-- WIDOK Z BARDZIEJ DOKŁADNYMI DANYMI O OFERTACH
+-- NIE ZAWIERA TAKICH DANYCH JAK UŻYWANE JĘZYKI,
+-- WSPÓŁPRACOWNICY PROJEKTU
+CREATE VIEW offerts_detailed AS
+SELECT CONCAT(users.name," ",users.surname) as "owner", offert.name, project_category.name as "project category", offert.description from offert
+inner join users on offert.owner_id = users.id
+inner join project_category on offert.category_id = project_category.id;
+
+
+
+
 
 DROP USER IF EXISTS 'user'@'localhost';
 CREATE USER 'user'@'localhost' IDENTIFIED BY '123';
@@ -408,6 +419,8 @@ GRANT EXECUTE ON PROCEDURE collaborate.insert_new_offert TO 'user'@'localhost';
 GRANT EXECUTE ON PROCEDURE collaborate.insert_message TO 'user'@'localhost';
 GRANT EXECUTE ON PROCEDURE collaborate.insert_match TO 'user'@'localhost';
 GRANT EXECUTE ON PROCEDURE collaborate.insert_collaborator TO 'user'@'localhost';
+GRANT EXECUTE ON PROCEDURE collaborate.insert_new_user TO 'user'@'localhost';
+GRANT EXECUTE ON PROCEDURE collaborate.insert_further_user_data TO 'user'@'localhost';
 
 
 
