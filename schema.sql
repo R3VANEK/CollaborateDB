@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS Collaborate;
-CREATE DATABASE Collaborate;
-USE Collaborate;
+DROP DATABASE IF EXISTS Collaborate1;
+CREATE DATABASE Collaborate1;
+USE Collaborate1;
 SET NAMES utf8mb4;
 
 
@@ -173,10 +173,9 @@ delimiter //
 CREATE PROCEDURE insert_new_user (IN email1 varchar(50), IN name1 varchar(20), IN surname1 varchar(70), IN password1 varchar(30))
     BEGIN
 
-        SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+        SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
         START TRANSACTION;
 
-            SET @last_id = (SELECT MAX(id) FROM users);
             INSERT INTO users(email,name,surname,password) VALUES 
             (email1, name1, surname1,password1);
 
@@ -298,11 +297,7 @@ delimiter ;
 
 
 
---!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
--- FUNKCJA WSTAWIAJĄCA DANE O MATCH
--- OD RAZU SPRAWDZA CZY NASTĄPIŁO DOPASOWANIE
--- JEŚLI TAK, TO OD RAZU TWORZY CHAT I WYSYŁA AUTOMATYCZNIE WIADOMOŚĆ
--- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 delimiter //
 CREATE PROCEDURE insert_match (IN id_user_inserted INT, IN id_offert1 INT)
        BEGIN

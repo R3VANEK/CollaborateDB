@@ -1,4 +1,4 @@
-USE Collaborate;
+USE Collaborate1;
 
 
 
@@ -63,14 +63,14 @@ call insert_new_user("joanna_2002@onet.pl", "Joanna", "Ewertowska", "asdn1293895
 
 call insert_further_user_data(1, "Hej, jestem Janek", NULL, NULL, "Github,Facebook", "https://github.com/REVANPL,https://facebook.com/1237681762","HTML,CSS,Javascript,C++,React,Java");
 call insert_further_user_data(2, "Joł joł ja nazywam się Konrad", NULL, "asdkj1l2390sfid", "Twitter,Portfolio","https://twitter.com/123nasd,https://portfolioKonrad","Django,C#,C++,Rust");
-call insert_further_user_data(3, "Z tej strony kuba", "zmienionKonrad@wp.pl", NULL, "Linkedin", "https://linkedin/hiremepls", "HTML,CSS,Javascript");
+call insert_further_user_data(3, "Z tej strony kuba", "zmienionKuba@wp.pl", NULL, "Linkedin", "https://linkedin/hiremepls", "HTML,CSS,Javascript");
 call insert_further_user_data(4, "Witam marzena", NULL, NULL, "Instagram,Facebook", "https://instagram/marzena123,https://facebook.com/marzena123","HTML,CSS,Goolang,Rust");
 call insert_further_user_data(5, "A G A T A ja być", NULL, NULL, "Github,Portfolio", "https://github.com/agata,https://portfolioAgata", "Java,Vue.js,Kotlin,ASP.NET");
 call insert_further_user_data(6, "wiedzieliście, że jestem wróżbitą?", NULL, NULL, "Twitter,Instagram", "https://twitter/wróżbitaMaciej,https://instagram.com/magik123", "C++,C#,Java");
 call insert_further_user_data(7, "Hejka, nazywam się Zuzia", "zmienionaZuzia@wp.pl", NULL, "Portfolio,LinkedIn", "https://portfolioZuzia.com,https://LinkedIn/hireMeZuzia", "Android studio,PHP,CSS,HTML");
 call insert_further_user_data(8, "Lubię kebaby - Tomek", NULL, "zmienionehasło123", "Facebook,Twitter","https:/facebook.com/TomcioPaluch,https://twitter.com/Tomciopaluch","Vue.js,Angular");
-call insert_further_user_data(9, "Silna i niezależna Polska, zwojujmy świat kodem!", NULL, NULL, "Facebook,Twitter,Instagram,Github,Portfolio", "https://facebook.com/patriota,https://twitter.com/Patriot123,https://github.com/PolishKielbasa,https://myportfolio.com","HTML,CSS,PHP,React,Django,Flutter,Goolang");
-call insert_further_user_data(10, "elektryk z wykształcenia, informatyk z zamiłowania", NULL, NULL, "Facebook","https://facebook.com/grzechuBłyskawica","C++,Angular,Kotlin,ASP.NET,Android studio,Electron");
+call insert_further_user_data(9, "NAURA", NULL, NULL, "Facebook,Twitter,Instagram,Github,Portfolio", "https://facebook.com/patriota,https://twitter.com/Patriot123,https://github.com/PolishKielbasa,https://myportfolio.com","HTML,CSS,PHP,React,Django,Flutter,Goolang");
+call insert_further_user_data(10, "mmmmm kabelki", NULL, NULL, "Facebook","https://facebook.com/grzechuBłyskawica","C++,Angular,Kotlin,ASP.NET,Android studio,Electron");
 
 
 
@@ -93,13 +93,13 @@ call insert_collaborator(1,3,1);
 call insert_collaborator(7,1,5);
 
 
-call insert_message(1,3,"Hej Kuba, z tej strony Janek");
+call insert_message(1,2,"Hej Konrad, z tej strony Janek");
 call insert_message(10,7,"O hejka, dało nam matcha, bardzo chciałbym dołączyć do projektu :)");
 call insert_message(7,10, "Pewnie zapraszamy! Zaraz dodam Cię do współpracowników projektu");
 call insert_message(7,10, "Zrobione");
 call insert_message(10,7, "Dzięki wielkie, fajnie będzie coś takiego z wami robić");
-call insert_message(3,1,"O cześć stary, jak się masz?");
-call insert_message(1,3,"Ja całkiem dobrze");
+call insert_message(2,1,"O cześć stary, jak się masz?");
+call insert_message(1,2,"Ja całkiem dobrze");
 
 
 
